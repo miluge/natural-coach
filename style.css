@@ -1,0 +1,27 @@
+.card.login {
+    width: 50%;
+    margin-top: 13%;
+}
+
+.card {
+    border-radius: 1rem;
+}
+
+.container.login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.is-vertical-center {
+    display: flex;
+    align-items: center;
+  }
+
+.table_wrapper {
+    overflow-x: auto;
+  }
+
+.btn-table {
+    margin-right: 1rem;
+}
