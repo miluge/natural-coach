@@ -53,7 +53,7 @@ catch(PDOException $error)
         <link rel="stylesheet" href="style.css">
    </head>  
    <body>
-        <div class="hero">
+        <div class="hero hunnid">
           <div class="columns is-vcentered">
           <div class="column"></div>
           <div class="column">
@@ -69,7 +69,7 @@ catch(PDOException $error)
                               <input type="password" name="password" class="input" placeholder="Password: password" />  
                               <br/>
                               <br>
-                              <input type="submit" name="login" class="button is-primary" value="Login" />  
+                              <input type="submit" name="login" class="button is-primary is-fullwidth" value="Login" />  
                               </form> 
                               <?php  
                               if(isset($message))  

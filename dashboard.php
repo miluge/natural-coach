@@ -3,9 +3,8 @@
 require_once 'header.php';
 
 ?>
+<div class="container">
   <section class="section">
-    <div class="columns is-desktop">
-      <div class="column">
         <div class="card">
           <div class="card-content">
             <p class="title">
@@ -36,8 +35,6 @@ require_once 'header.php';
             </p>
           </footer>
         </div>
-      </div>
-      <div class="column">
       <div class="card">
           <div class="card-content">
             <p class="title">
@@ -71,8 +68,6 @@ require_once 'header.php';
             </p>
           </footer>
         </div>
-      </div>
-      <div class="column">
       <div class="card">
           <div class="card-content">
             <p class="title">
@@ -106,8 +101,6 @@ require_once 'header.php';
             </p>
           </footer>
         </div>
-      </div>
-      <div class="column">
       <div class="card">
           <div class="card-content">
             <p class="title">
@@ -141,9 +134,8 @@ require_once 'header.php';
             </p>
           </footer>
         </div>
-      </div>
-    </div>
 </section>
+</div>
 
 
 <?php

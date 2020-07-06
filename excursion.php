@@ -45,14 +45,10 @@ require_once 'header.php';
                 <th> $row[6] </th>
                 <th> $row[7] </th>
                 <th> $row[3] </th>
-                <th>
-                <span class=\"icon button  \">
-                <i class=\"material-icons\">edit</i>
-                </span>
-                <span class=\"icon button  \">
-                    <i class=\"material-icons\">delete</i>
-                </span>
-                </th>
+                <th>";
+                echo '<a class="button is-primary btn-table" href="edit-hiker.php?id='.$row[0].'">Edit</a>';
+                echo '<a id="ByeBye" class="button is-danger" href="delete.php?id='.$row[0].'">Delete</a>';
+                echo "</th>
                 </tr>";
                 }
 

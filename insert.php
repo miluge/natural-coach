@@ -25,5 +25,3 @@ require_once 'header.php';
                 unset($pdo);
 
                 header("location:hikers.php");
-
-                ?>
