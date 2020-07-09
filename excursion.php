@@ -6,7 +6,7 @@ require_once 'header.php';
 <section class="section">
     <div class="container">
             <a class="button is-link  " href="add-excursion.php">Add Trip</a>
-        <table class="table is hoverable is-fullwidth">
+        <table class="table is-hoverable is-fullwidth">
             <thead>
                 <tr>
                     <th>ID</th>

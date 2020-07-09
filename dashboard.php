@@ -3,141 +3,219 @@
 require_once 'header.php';
 
 ?>
-<div class="container">
-  <section class="section">
-        <div class="card">
-          <div class="card-content">
-            <p class="title">
-              Registered hikers
-            </p>
-            <p class="content">
-            <?php
+<div class="column is-9">
+                <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="../">Bulma</a></li>
+                        <li><a href="../">Templates</a></li>
+                        <li><a href="../">Examples</a></li>
+                        <li class="is-active"><a href="#" aria-current="page">Admin</a></li>
+                    </ul>
+                </nav>
+                <section class="hero is-info welcome is-small">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">
+                                Hello, Admin.
+                            </h1>
+                            <h2 class="subtitle">
+                                I hope you are having a great day!
+                            </h2>
+                        </div>
+                    </div>
+                </section>
+                <section class="info-tiles">
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">
+                                    <?php
 
-            $reponse = $conn->prepare('SELECT count(id_randonneur) as total from `randonneurs`');
-            $reponse->execute(); 
-            $total = $reponse->fetch(PDO::FETCH_ASSOC);
-            echo $total['total'];
+                                    $reponse = $conn->prepare('SELECT count(id_randonneur) as total from `randonneurs`');
+                                    $reponse->execute(); 
+                                    $total = $reponse->fetch(PDO::FETCH_ASSOC);
+                                    echo $total['total'];
 
-            ?>
+                                    ?>
+                                </p>
+                                <p class="subtitle">Hikers</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">
+                                <?php
 
-            </p>
-          </div>
-          <footer class="card-footer">
-            <form class="card-footer-item" action="functions.php" method="post">
-              <input class="button is-link" type="submit" name="Export-hikers" method="post" value="Export">
-              </input>
-            </form>
-            <p class="card-footer-item">
-                <a class="button is-link" href="add-hiker.php">Add</a>
-            </p>
-            <p class="card-footer-item">
-                <a class="button is-link" href="edit-hiker.php">Edit</a>
-            </p>
-          </footer>
+                                $reponse = $conn->prepare('SELECT count(id_excursion) as total from `excursion`');
+                                $reponse->execute(); 
+                                $total = $reponse->fetch(PDO::FETCH_ASSOC);
+                                echo $total['total'];
+
+                                ?>
+                                </p>
+                                <p class="subtitle">Excursions</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">
+                                <?php
+
+                                $reponse = $conn->prepare('SELECT count(id_guide) as total from `guide`');
+                                $reponse->execute(); 
+                                $total = $reponse->fetch(PDO::FETCH_ASSOC);
+                                echo $total['total'];
+
+                                ?>
+                                </p>
+                                <p class="subtitle">Guides</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">
+                                <?php
+
+                                $reponse = $conn->prepare('SELECT count(id_group) as total from `tour`');
+                                $reponse->execute(); 
+                                $total = $reponse->fetch(PDO::FETCH_ASSOC);
+                                echo $total['total'];
+
+                                ?>
+                                </p>
+                                <p class="subtitle">Groups</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="card events-card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    Excursions
+                                </p>
+                                <a href="#" class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </a>
+                            </header>
+                            <div class="card-table">
+                                <div class="content">
+                                    <table class="table is-fullwidth is-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <a href="#" class="card-footer-item">View All</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    Group Search
+                                </p>
+                                <a href="#" class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </a>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input is-large" type="text" placeholder="">
+                                        <span class="icon is-medium is-left">
+                      <i class="fa fa-search"></i>
+                    </span>
+                                        <span class="icon is-medium is-right">
+                      <i class="fa fa-check"></i>
+                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    Hiker Search
+                                </p>
+                                <a href="#" class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </a>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input is-large" type="text" placeholder="">
+                                        <span class="icon is-medium is-left">
+                      <i class="fa fa-search"></i>
+                    </span>
+                                        <span class="icon is-medium is-right">
+                      <i class="fa fa-check"></i>
+                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      <div class="card">
-          <div class="card-content">
-            <p class="title">
-              Trips
-            </p>
-            <p class="content">
-            <?php
+    </div>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+</body>
 
-              $reponse = $conn->prepare('SELECT count(id_excursion) as total from `excursion`');
-              $reponse->execute(); 
-              $total = $reponse->fetch(PDO::FETCH_ASSOC);
-              echo $total['total'];
-
-            ?>
-            </p>
-          </div>
-          <footer class="card-footer">
-          <form class="card-footer-item" action="functions.php" method="post">
-              <input class="button is-link" type="submit" name="Export-excursion" method="post" value="Export">
-              </input>
-            </form>
-            <p class="card-footer-item">
-              <a class="button is-link" href="add-excursion.php">
-                Add
-              </a>
-            </p>
-            <p class="card-footer-item">
-              <a class="button is-link" href="edit-excursion.php">
-                Edit
-              </a>
-            </p>
-          </footer>
-        </div>
-      <div class="card">
-          <div class="card-content">
-            <p class="title">
-              Guides
-            </p>
-            <p class="content">
-            <?php
-
-              $reponse = $conn->prepare('SELECT count(id_guide) as total from `guide`');
-              $reponse->execute(); 
-              $total = $reponse->fetch(PDO::FETCH_ASSOC);
-              echo $total['total'];
-
-            ?>
-            </p>
-          </div>
-          <footer class="card-footer">
-          <form class="card-footer-item" action="functions.php" method="post">
-              <input class="button is-link" type="submit" name="Export-guide" method="post" value="Export">
-              </input>
-            </form>
-            <p class="card-footer-item">
-              <a class="button is-link" href="add_guide.php"> 
-                Add
-              </a>
-            </p>
-            <p class="card-footer-item">
-              <a class="button is-link" href="edit-guide.php">
-                Edit
-              </a>
-            </p>
-          </footer>
-        </div>
-      <div class="card">
-          <div class="card-content">
-            <p class="title">
-              Groups
-            </p>
-            <p class="content">
-            <?php
-
-              $reponse = $conn->prepare('SELECT count(id_group) as total from `tour`');
-              $reponse->execute(); 
-              $total = $reponse->fetch(PDO::FETCH_ASSOC);
-              echo $total['total'];
-
-            ?>
-            </p>
-          </div>
-          <footer class="card-footer">
-          <form class="card-footer-item" action="functions.php" method="post">
-              <input class="button is-link" type="submit" name="Export-group" method="post" value="Export">
-              </input>
-            </form>
-            <p class="card-footer-item">
-              <a class="button is-link" href="add-group.php">
-                Add
-              </a>
-            </p>
-            <p class="card-footer-item">
-              <a class="button is-link" href="edit-group.php">
-                Edit
-              </a>
-            </p>
-          </footer>
-        </div>
-</section>
-</div>
-
-
-<?php
-require_once 'footer.php';
-?>
+</html>

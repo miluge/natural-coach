@@ -17,47 +17,96 @@ try{
 
 
 ?>
-<!DOCTYPE html>
-<html lang="xyz">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
-    
-  </head>
-  <body>
-    <header>
-    <nav id="navMenu" class="navbar" role="navigation" aria-label="main navigation">
-    <div class="container">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="dashboard.php">Home</a>
-        
 
-        <div id="navbar-burger-id" class="navbar-burger">
-          <span></span>
-          <span></span>
-          <span></span>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natural Coa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.8.2-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+</head>
+
+<body>
+
+    <!-- START NAV -->
+    <nav class="navbar is-white">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item brand-text" href="../index.html">
+          Natural Coach
+        </a>
+                <div class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="admin.html">
+            Home
+          </a>
+                    <a class="navbar-item" href="admin.html">
+            Hikers
+          </a>
+                    <a class="navbar-item" href="admin.html">
+            Guides
+          </a>
+                    <a class="navbar-item" href="admin.html">
+            Trips
+          </a>
+                                 <a class="navbar-item" href="admin.html">
+            Groups
+          </a>
+                </div>
+
+            </div>
         </div>
-      </div>
-      <div id="navbar-menu-id" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="excursion.php">Trips</a>
-          <a class="navbar-item" href="hikers.php">Hiker</a>
-          <a class="navbar-item" href="guide.php">Guide</a>
-          <a class="navbar-item" href="group.php">Group</a>
-          <a class="navbar-item is-hidden-desktop" href="logout.php">LOG OUT</a>
-        </div>
-        <div class="navbar-end">
-          <a class="navbar-item is-hidden-touch" href="logout.php">LOG OUT</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
+    </nav>
+    <!-- END NAV -->
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3 ">
+                <aside class="menu is-hidden-mobile">
+                    <p class="menu-label">
+                        General
+                    </p>
+                    <ul class="menu-list">
+                        <li><a class="is-active" href="admin.html">Dashboard</a></li>
+                        <li><a href="hikers.php">Documentation</a></li>
+                    </ul>
+                    <p class="menu-label">
+                      Excursions & Groups Administration
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <ul>
+                                <li><a href="hikers.php">Add an excursion</a></li>
+                                <li><a href="excursion.php">Edit an excursion</a></li>
+                                <li><a href="guide.php">Add a Group</a></li>
+                                <li><a href="group.php">Edit a Group</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p class="menu-label">
+                        Hiker Administration
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <ul>
+                                <li><a href="hikers.php">Add a hiker</a></li>
+                                <li><a href="excursion.php">Edit a Hiker</a></li>
+                            </ul>
+                        </li>
+                </aside>
+            </div>
 
 
 
