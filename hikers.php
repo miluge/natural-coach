@@ -42,7 +42,7 @@ require_once 'header.php';
         echo '<th data-field="email">' . $row['email'] . '</th>';
         echo '<th>';
         echo '<a class="button is-primary btn-table" href="edit-hiker.php?id='.$row['id_randonneur'].'">Edit</a>';
-        echo '<a id="ByeBye" class="button is-danger" href="delete.php?id='.$row['id_randonneur'].'">Delete</a>';
+        echo '<a id="ByeBye" class="button is-danger" href="hiker.php?id='.$row['id_randonneur'].'">Delete</a>';
         echo "</th>
         <tr>";
     }
@@ -80,8 +80,6 @@ require_once 'header.php';
       $('#navbar-menu-id').addClass('is-active');
     }
   });
-
-  //
 </script>
 </body>
 </html>

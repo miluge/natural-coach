@@ -4,14 +4,41 @@ require_once 'header.php';
 
 ?>
 <div class="column is-9">
-                <nav class="breadcrumb" aria-label="breadcrumbs">
+
+<?php
+
+if (!empty($_GET['dir'])) {
+$cwd = $_GET['dir'];
+}
+else  {
+  $cwd = $init_dir.DIRECTORY_SEPARATOR;
+}
+
+chdir($cwd);
+
+?>
+                <!-- <nav class="breadcrumb" aria-label="breadcrumbs">
                     <ul>
-                        <li><a href="../">Bulma</a></li>
-                        <li><a href="../">Templates</a></li>
-                        <li><a href="../">Examples</a></li>
+                            <?php
+                            // break absolute path into individual items
+                            $breadcrumb_menu = explode(DIRECTORY_SEPARATOR, getcwd());
+                            $path_accum = ''; // initialize increment
+                            $is_home = false;
+                            // iterate over root directory
+                            foreach ($breadcrumb_menu as $item) {
+                                $path_accum .= $item . DIRECTORY_SEPARATOR; // recursive path increment
+                                if ($item === $home_dir) {
+                                    $is_home = true;
+                                }
+                                if ($is_home) {
+                                    echo "<li><a href=\"?dir=$path_accum\" title=\"$path_accum\">$item</a></li>";
+                                }
+                                }
+
+                            ?> 
                         <li class="is-active"><a href="#" aria-current="page">Admin</a></li>
                     </ul>
-                </nav>
+                </nav> -->
                 <section class="hero is-info welcome is-small">
                     <div class="hero-body">
                         <div class="container">
@@ -201,11 +228,11 @@ require_once 'header.php';
                                     <div class="control has-icons-left has-icons-right">
                                         <input class="input is-large" type="text" placeholder="">
                                         <span class="icon is-medium is-left">
-                      <i class="fa fa-search"></i>
-                    </span>
+                                        <i class="fa fa-search"></i>
+                                        </span>
                                         <span class="icon is-medium is-right">
-                      <i class="fa fa-check"></i>
-                    </span>
+                                        <i class="fa fa-check"></i>
+                                      </span>
                                     </div>
                                 </div>
                             </div>
@@ -215,7 +242,7 @@ require_once 'header.php';
             </div>
         </div>
     </div>
-    <script async type="text/javascript" src="../js/bulma.js"></script>
-</body>
 
-</html>
+<?php
+require_once 'footer.php';
+?>

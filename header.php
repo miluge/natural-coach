@@ -2,6 +2,7 @@
  
 require_once 'dbconfig.php';
 require_once 'functions.php';
+require_once 'init.php';
  
 $dsn= "mysql:host=$host;dbname=$db";
  
@@ -39,7 +40,7 @@ try{
     <nav class="navbar is-white">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item brand-text" href="../index.html">
+                <a class="navbar-item brand-text" href="dashboard.php">
           Natural Coach
         </a>
                 <div class="navbar-burger burger" data-target="navMenu">
@@ -50,19 +51,19 @@ try{
             </div>
             <div id="navMenu" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="admin.html">
+                    <a class="navbar-item" href="dashboard.php">
             Home
           </a>
-                    <a class="navbar-item" href="admin.html">
+                    <a class="navbar-item" href="hikers.php">
             Hikers
           </a>
-                    <a class="navbar-item" href="admin.html">
+                    <a class="navbar-item" href="guide.php">
             Guides
           </a>
-                    <a class="navbar-item" href="admin.html">
-            Trips
+                    <a class="navbar-item" href="excursion.php">
+            Excursions
           </a>
-                                 <a class="navbar-item" href="admin.html">
+                    <a class="navbar-item" href="group.php">
             Groups
           </a>
                 </div>
@@ -79,19 +80,18 @@ try{
                         General
                     </p>
                     <ul class="menu-list">
-                        <li><a class="is-active" href="admin.html">Dashboard</a></li>
-                        <li><a href="hikers.php">Documentation</a></li>
+                        <li><a class="is-active" href="dashboard.php">Dashboard</a></li>
+                        <li><a href="https://github.io/miluge">Github</a></li>
                     </ul>
                     <p class="menu-label">
-                      Excursions & Groups Administration
+                      Excursion Administration
                     </p>
                     <ul class="menu-list">
                         <li>
                             <ul>
-                                <li><a href="hikers.php">Add an excursion</a></li>
-                                <li><a href="excursion.php">Edit an excursion</a></li>
-                                <li><a href="guide.php">Add a Group</a></li>
-                                <li><a href="group.php">Edit a Group</a></li>
+                                <li><a href="excursion.php">Excursions</a></li>
+                                <li><a href="add-excursion.php">Add an excursion</a></li>
+                                <!-- <li><a href="excursion.php">Edit an excursion</a></li> -->
                             </ul>
                         </li>
                     </ul>
@@ -101,10 +101,35 @@ try{
                     <ul class="menu-list">
                         <li>
                             <ul>
-                                <li><a href="hikers.php">Add a hiker</a></li>
-                                <li><a href="excursion.php">Edit a Hiker</a></li>
+                            <li><a href="hikers.php">Hikers</a></li>
+                                <li><a href="add-hiker.php">Add a hiker</a></li>
+                                <!-- <li><a href="edit-hiker.php">Edit a Hiker</a></li> -->
                             </ul>
                         </li>
+                    <p class="menu-label">
+                      Group Administration
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <ul>
+                                <li><a href="group.php">Groups</a></li>
+                                <li><a href="add-group.php">Add a group</a></li>
+                                <!-- <li><a href="excursion.php">Edit an excursion</a></li> -->
+                            </ul>
+                        </li>
+                    </ul>
+                    <p class="menu-label">
+                      Guide Administration
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <ul>
+                                <li><a href="guide.php">Guides</a></li>
+                                <li><a href="add-guide.php">Add a guide</a></li>
+                                <!-- <li><a href="excursion.php">Edit an excursion</a></li> -->
+                            </ul>
+                        </li>
+                    </ul>
                 </aside>
             </div>
 
