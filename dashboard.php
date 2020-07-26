@@ -3,20 +3,8 @@
 require_once 'header.php';
 
 ?>
+
 <div class="column is-9">
-
-<?php
-
-if (!empty($_GET['dir'])) {
-$cwd = $_GET['dir'];
-}
-else  {
-  $cwd = $init_dir.DIRECTORY_SEPARATOR;
-}
-
-chdir($cwd);
-
-?>
                 <!-- <nav class="breadcrumb" aria-label="breadcrumbs">
                     <ul>
                             <?php
@@ -66,6 +54,10 @@ chdir($cwd);
                                     ?>
                                 </p>
                                 <p class="subtitle">Hikers</p>
+                                <form class="card-footer-item" action="functions.php" method="post">
+                                    <input class="button is-link" type="submit" name="Export-hikers" method="post" value="Export">
+                                    </input>
+                                </form>
                             </article>
                         </div>
                         <div class="tile is-parent">
@@ -81,6 +73,10 @@ chdir($cwd);
                                 ?>
                                 </p>
                                 <p class="subtitle">Excursions</p>
+                                <form class="card-footer-item" action="functions.php" method="post">
+                                <input class="button is-link" type="submit" name="Export-excursion" method="post" value="Export">
+                                </input>
+                                </form>
                             </article>
                         </div>
                         <div class="tile is-parent">
@@ -96,6 +92,10 @@ chdir($cwd);
                                 ?>
                                 </p>
                                 <p class="subtitle">Guides</p>
+                                <form class="card-footer-item" action="functions.php" method="post">
+              <input class="button is-link" type="submit" name="Export-guide" method="post" value="Export">
+              </input>
+            </form>
                             </article>
                         </div>
                         <div class="tile is-parent">
@@ -111,138 +111,14 @@ chdir($cwd);
                                 ?>
                                 </p>
                                 <p class="subtitle">Groups</p>
+                                <form class="card-footer-item" action="functions.php" method="post">
+              <input class="button is-link" type="submit" name="Export-group" method="post" value="Export">
+              </input>
+            </form>
                             </article>
                         </div>
                     </div>
                 </section>
-                <div class="columns">
-                    <div class="column is-6">
-                        <div class="card events-card">
-                            <header class="card-header">
-                                <p class="card-header-title">
-                                    Excursions
-                                </p>
-                                <a href="#" class="card-header-icon" aria-label="more options">
-                  <span class="icon">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </a>
-                            </header>
-                            <div class="card-table">
-                                <div class="content">
-                                    <table class="table is-fullwidth is-striped">
-                                        <tbody>
-                                            <tr>
-                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                <td>Lorum ipsum dolem aire</td>
-                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                <td>Lorum ipsum dolem aire</td>
-                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                <td>Lorum ipsum dolem aire</td>
-                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                <td>Lorum ipsum dolem aire</td>
-                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                <td>Lorum ipsum dolem aire</td>
-                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                <td>Lorum ipsum dolem aire</td>
-                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                <td>Lorum ipsum dolem aire</td>
-                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                <td>Lorum ipsum dolem aire</td>
-                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                <td>Lorum ipsum dolem aire</td>
-                                                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <footer class="card-footer">
-                                <a href="#" class="card-footer-item">View All</a>
-                            </footer>
-                        </div>
-                    </div>
-                    <div class="column is-6">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title">
-                                    Group Search
-                                </p>
-                                <a href="#" class="card-header-icon" aria-label="more options">
-                  <span class="icon">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </a>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    <div class="control has-icons-left has-icons-right">
-                                        <input class="input is-large" type="text" placeholder="">
-                                        <span class="icon is-medium is-left">
-                      <i class="fa fa-search"></i>
-                    </span>
-                                        <span class="icon is-medium is-right">
-                      <i class="fa fa-check"></i>
-                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title">
-                                    Hiker Search
-                                </p>
-                                <a href="#" class="card-header-icon" aria-label="more options">
-                  <span class="icon">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </a>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    <div class="control has-icons-left has-icons-right">
-                                        <input class="input is-large" type="text" placeholder="">
-                                        <span class="icon is-medium is-left">
-                                        <i class="fa fa-search"></i>
-                                        </span>
-                                        <span class="icon is-medium is-right">
-                                        <i class="fa fa-check"></i>
-                                      </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 <?php
 require_once 'footer.php';
 ?>

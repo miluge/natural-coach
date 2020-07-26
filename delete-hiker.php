@@ -17,5 +17,11 @@ if ( !empty($_POST)) {
     $q = $conn->prepare($sql);
     $q->execute(array($id));
 
+    echo '<div class="container">
+    <section class="section">
+        <h2 class="title">Success</h2>
+        <a class="button is-primary" href="hikers.php">Back to Hikers page </a>
+    <section>
+    </div>';
 ?>
 

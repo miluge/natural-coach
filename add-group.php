@@ -9,39 +9,31 @@ require_once 'header.php';
     <h1 class="title">
         Create new group
     </h1>
-    <form class="field" action="" method="post" name="add-group">
-        <label class="label">Excursion ID</label>
-        <div class="control">
-            <input class="input" type="text" name="id_excursion" placeholder="Add the excursion ID to the group">
+    <form class="field" action="insertgroup.php" method="post" name="add-group">
+         <label class="label">Select Excursion </label>
+        <div class="control select">
+           <select class="select" name="id_excursion" >
+         
+              <?php
+              $con=mysqli_connect("localhost","root","","natural-coach");
+                $get_trips="select * from excursion ";
+                $run_trips=mysqli_query($con,$get_trips);
+                while($row_trip=mysqli_fetch_array($run_trips))
+                {
+                  $trip_id=$row_trip['id_excursion'];
+                  $trip_title=$row_trip['name'];
+                  
+                  echo"<option value='$trip_id' required>$trip_title</option>";
+                }
+              ?>
+            </select>
         </div>
-        <label class="label">Max participants</label>
-        <div class="control">
-            <input class="input" type="text" name="max_place" placeholder="Add a maximum capacity">
-        </div>
-        <br>
         <div class="control">
             <input class="button is-link " type="submit" name="submit-group" value="Save"></input>
             <input class="button is-danger " value="Cancel"></input>
         </div>
-        <?php
-        // Attempt insert query execution
-        try{
-        // Create prepared statement
-        $sql = "INSERT INTO tour ( id_excursion, max_place) VALUES (:id_excursion, :max_place)";
-        $stmt = $conn->prepare($sql);
-        
-        // Bind parameters to statement
-        $stmt->bindParam(':id_excursion', $_REQUEST['id_excursion']);
-        $stmt->bindParam(':max_place', $_REQUEST['max_place']);
-        
-        // Execute the prepared statement
-        $stmt->execute();
-    } catch(PDOException $e){
-        die("ERROR: Could not able to execute $sql. " . $e->getMessage());
-    } 
-    // Close connection
-    unset($pdo);
-    ?>
+
     </form>
     </div>
 </section>
+

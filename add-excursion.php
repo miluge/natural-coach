@@ -44,7 +44,7 @@ require_once 'header.php';
         </div>
     </form>
     </div>
-    <section>
+    <section> 
 <?php
 
 // Attempt insert query execution
@@ -62,9 +62,15 @@ try{
     $stmt->bindParam(':region_start', $_REQUEST['region_start']);
     $stmt->bindParam(':region_end', $_REQUEST['region_end']);
     
-    
+   
     // Execute the prepared statement
-    $stmt->execute();
+   if( $stmt->execute())
+   {
+       echo "<script > window.alert('Excursion created successfully')</script>";
+    echo"<script>window.open('excursion.php','_self')</script>";
+   }
+
+  
 } catch(PDOException $e){
     die("ERROR: Could not able to execute $sql. " . $e->getMessage());
 }

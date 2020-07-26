@@ -2,7 +2,6 @@
  
 require_once 'dbconfig.php';
 require_once 'functions.php';
-require_once 'init.php';
  
 $dsn= "mysql:host=$host;dbname=$db";
  
@@ -28,10 +27,12 @@ try{
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Natural Coa</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <!-- Bulma Version 0.8.2-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.2/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -65,6 +66,9 @@ try{
           </a>
                     <a class="navbar-item" href="group.php">
             Groups
+          </a>
+          <a class="button navbar-item is-hidden-desktop logout-m is-danger" href="logout.php">
+            Log out
           </a>
                 </div>
 
@@ -130,6 +134,15 @@ try{
                             </ul>
                         </li>
                     </ul>
+                    <p class="menu-label">
+                      Log out
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <ul>
+                                <li><a class="button is-danger" href="logout.php">Log Out</a></li>
+                            </ul>
+                        </li>
                 </aside>
             </div>
 

@@ -4,12 +4,20 @@ jQuery.validator.addMethod("greaterThan",
 function(value, element, params) {
 
     if (!/Invalid|NaN/.test(new Date(value))) {
-        return new Date(value) > new Date($(params).val());
+        return new Date(value) < new Date($(params).val());
     }
 
     return isNaN(value) && isNaN($(params).val()) 
-        || (Number(value) > Number($(params).val())); 
+        || (Number(value) < Number($(params).val())); 
 },'Must be greater than {0}.');
+
+$(document).ready(function() {
+    $.validator.addMethod("endDate", function(value, element) {
+        var startDate = $('.startDate').val();
+        return Date.parse(startDate) <= Date.parse(value) || value == "";
+    }, "* End date must be after start date");
+    $('#formId').validate();
+});
 
 
 // Wait for the DOM to be ready
@@ -76,8 +84,7 @@ $(function() {
         },
         end_date: {
             required: true,
-            dateISO: true,
-            greaterThan: "the start date"
+            dateISO: true
         },
         price: {
           required: true,

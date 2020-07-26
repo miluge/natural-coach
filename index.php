@@ -53,37 +53,51 @@ catch(PDOException $error)
         <link rel="stylesheet" href="style.css">
    </head>  
    <body>
-        <div class="hero hunnid">
-          <div class="columns is-vcentered">
-          <div class="column"></div>
-          <div class="column">
-               <div class="container">
-               <div class="card login">
-                    <div class="card-content login">
-                         <div class="field">  
-                              <h3 class="title">Natural Coach Admin Panel login</h3><br />  
-                              <form method="post">  
-                              <label class="label">Username</label>  
-                              <input type="text" name="username" class="input" placeholder="Username : miluge"/>    
-                              <label class="label">Password</label>  
-                              <input type="password" name="password" class="input" placeholder="Password: password" />  
-                              <br/>
-                              <br>
-                              <input type="submit" name="login" class="button is-primary is-fullwidth" value="Login" />  
-                              </form> 
-                              <?php  
-                              if(isset($message))  
-                              {  
-                                   echo '<label class="text-danger">'.$message.'</label>';  
-                              }  
-                              ?> 
-                         </div> 
-                    </div> 
-               </div>
-               </div>
-          </div>
-          <div class="column"></div>
+   <section class="hero is-info is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+          <form method="post" action="" class="box">
+            <div class="field">
+              <label for="" class="label">Email</label>
+              <div class="control has-icons-left">
+                <input type="text" name="username" placeholder="e.g. miluge" class="input" required>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="" class="label">Password</label>
+              <div class="control has-icons-left">
+                <input type="password" name="password" placeholder="password" class="input" required>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-lock"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="" class="checkbox">
+               <input type="checkbox">
+               Remember me
+              </label>
+            </div>
+            <div class="field">
+              <input type="submit" name="login" class="button is-success is-fullwidth" value="Login">
+              </input>
+            </div>
+          </form>
+          <?php  
+           if(isset($message))  
+           {  
+           echo '<label class="text-danger">'.$message.'</label>';  
+           }  
+          ?> 
         </div>
-        </div>   
+      </div>
+    </div>
+  </div>
+</section>
    </body>  
 </html>  

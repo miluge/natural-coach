@@ -70,3 +70,7 @@ require_once 'header.php';
     </form>
 </div>
 </section>
+
+<?php
+    require 'footer.php';
+    ?>

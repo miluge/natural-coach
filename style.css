@@ -23,7 +23,8 @@
   }
 
 .btn-table {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
+    padding: 0.7rem;
 }
 
 .dialog-ovelay {
@@ -118,6 +119,23 @@ button.btn:nth-child(1) {
     margin-bottom: 1.5rem;
 }
 
+.select {
+    margin-bottom: 1rem;
+}
+
+.label {
+    margin-bottom: 1rem;
+}
+
+.hero {
+    margin-bottom: 1rem;
+}
+
+.logout-m {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
 @media
 only screen and (max-width: 1500px) {
   table, thead, tbody, th, td, tr {
@@ -150,4 +168,6 @@ only screen and (max-width: 1500px) {
   td:nth-of-type(3):before { content: "Type"; }
   td:nth-of-type(4):before { content: "Default";}
 }
+
+
 

@@ -4,8 +4,11 @@ require_once 'header.php';
 
 ?>
 <section class="section">
-    <div class="container">
+    <div class="container table_wrapper">
+    <form class="field" action="#" method="post">
+    <div class="control">
             <a class="button is-link  " href="add-excursion.php">Add Trip</a>
+            </form>
         <table class="table is-hoverable is-fullwidth">
             <thead>
                 <tr>
@@ -14,7 +17,7 @@ require_once 'header.php';
                     <th>Start Date</th>
                     <th>End date</th>
                     <th>Price</th>
-                    <th>Starting Point</th>
+                    <th>Star Point</th>
                     <th>End Point</th>
                     <th><abbr title="Max participants">Max Participants</abbr></th>
                     <th>Action</th>
@@ -31,23 +34,23 @@ require_once 'header.php';
                 $statement->execute();
          
                 //Fetch the rows from our statement.
-                $rows = $statement->fetchAll(PDO::FETCH_NUM);
+                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
          
                 //Loop through our table names.
                 foreach($rows as $row){
                 //Print the table name out onto the page.
-                echo "<tr>
-                <th> $row[0] </th>
-                <th> $row[1] </th>
-                <th> $row[4] </th>
-                <th> $row[5] </th>
-                <th> $row[2] </th>
-                <th> $row[6] </th>
-                <th> $row[7] </th>
-                <th> $row[3] </th>
-                <th>";
-                echo '<a class="button is-primary btn-table" href="edit-hiker.php?id='.$row[0].'">Edit</a>';
-                echo '<a id="ByeBye" class="button is-danger" href="delete.php?id='.$row[0].'">Delete</a>';
+                echo '<tr>';
+                echo '<th> ID ' . $row['id_excursion'] . '</th>';
+                echo '<th data-field="name">' . $row['name'] . '</th>';
+                echo '<th data-field="start_date">' . $row['start_date'] . '</th>';
+                echo '<th data-field="end_date">' . $row['end_date'] . '</th>';
+                echo '<th data-field="price">' . $row['price'] . '</th>';
+                echo '<th data-field="region_start">' . $row['region_start'] . '</th>';
+                echo '<th data-field="region_end">' . $row['region_end'] . '</th>';
+                echo '<th data-field="max_participant">' . $row['max_participant'] . '</th>';
+                echo '<th>';
+                echo '<a class="button is-primary btn-table margin-r" href="edit-excursion.php?id='.$row['id_excursion'].'">Edit</a>';
+                echo '<a id="delete" class="delete-btn button is-danger" href="delete-excursion.php?id='.$row['id_excursion'].'">Delete</a>';
                 echo "</th>
                 </tr>";
                 }
@@ -57,3 +60,9 @@ require_once 'header.php';
         </table>
     </div>
 </section>
+
+<?php
+
+require 'footer.php'
+
+?>
